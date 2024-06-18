@@ -56,7 +56,7 @@ int	main(int ac, char **av)
 	t_game	game;
 
 	if (ac != 2)
-		return (0);
+		return (ft_printf("Error\n"), 0);
 	ft_window_size(&game, av);
 	game.mlx = mlx_init();
 	game.window = mlx_new_window(game.mlx, game.size_x, game.size_y, "so_long");

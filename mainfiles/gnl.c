@@ -6,7 +6,7 @@
 /*   By: rode-lim <rode-lim@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 13:29:01 by micarrel          #+#    #+#             */
-/*   Updated: 2024/06/16 17:40:10 by rode-lim         ###   ########.fr       */
+/*   Updated: 2024/06/18 21:42:41 by rode-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	ft_count_line(int fd)
 	int		bytes;
 
 	buffer = 0;
-	linecount = 1;
+	linecount = 0;
 	while (1)
 	{
 		bytes = read(fd, &buffer, 1);

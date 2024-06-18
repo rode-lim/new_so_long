@@ -18,14 +18,20 @@ void	ft_window_size(t_game *data, char **av)
 
 	fd = open(av[1], O_RDONLY);
 	if (fd < 0)
+	{
+		ft_printf("Error\n");
 		exit(1);
+	}
 	if (ft_strnstr(av[1], ".ber", ft_strlen(av[1])) == NULL)
+	{
+		ft_printf("Error\n");
 		exit(1);
+	}
 	data->size_x = (ft_line(fd) * 64);
 	data->size_y = (ft_count_line(fd) * 64);
 	if (data->size_x == 0 || data->size_y == 0)
 	{
-		ft_printf("Mapa vazio\n");
+		ft_printf("Error\n");
 		exit(1);
 	}
 }
@@ -42,6 +48,7 @@ void	flood_fill(int x, int y, int *flag, char **tab)
 	{
 		(*flag)++;
 		tab[y][x] = 'E';
+		return ;
 	}
 	flood_fill(x + 1, y, flag, tab);
 	flood_fill(x - 1, y, flag, tab);

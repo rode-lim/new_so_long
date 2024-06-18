@@ -42,10 +42,10 @@ void	floor_create(t_game *game, int i)
 	j = 0;
 	if (ft_strlen(game->map[i]) != game->size_x / 64
 		&& i != (game->size_y / 64))
-		ft_error_map("Wrong map format\n", game);
+		ft_error_map("Error map isn't rectangular\n", game);
 	if (game->map[(game->size_y / 64)]
 		&& game->map[(game->size_y / 64)][0] != '\0')
-		ft_error_map("Wrong map\n", game);
+		ft_error_map("Error wrong map\n", game);
 	while (game->map[i])
 	{
 		j = 0;
